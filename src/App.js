@@ -1,10 +1,12 @@
+import React from "react";
+import Register from "./pages/Register";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <h1>hellooo</h1>
+    <div>
+      <Register />
     </div>
   );
-}
+};
 
 export default App;
