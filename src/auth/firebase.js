@@ -55,10 +55,12 @@ export const signIn = async (email, password, navigate) => {
   }
 };
 
-export const userObserver = () => {
+export const userObserver = ( setCurrentUser ) => {
   //? Kullanıcının sign in olup olmadığını takip eden ve kullanıcı değiştiğinde yeni kullanıcıyı response olarak döndüren firebase metodu
   onAuthStateChanged(auth, (user) => {
     if (user) {
+      const { email, displayName, photoURL } = user;
+      setCurrentUser({ email, displayName, photoURL });
       console.log(user);
     } else {
       console.log("user signed out");
