@@ -1,10 +1,11 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Navbar from "../components/Navbar";
 import Login from "../pages/Login";
 import Main from "../pages/Main";
-import Register from "../pages/Register";
 import MovieDetail from "../pages/MovieDetail";
-import Navbar from "../components/Navbar";
+import Register from "../pages/Register";
+// import PrivateRouter from "./PrivateRouter";
 
 const AppRouter = () => {
   return (

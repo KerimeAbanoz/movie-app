@@ -2,10 +2,14 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import avatar from "../assets/icons/avatar.png";
 import { logOut } from "../auth/firebase";
-import  AuthContext  from "../context/AuthContextProvider";
+import  {AuthContext}  from "../context/AuthContextProvider";
 
 const Navbar = () => {
   const { currentUser } = useContext(AuthContext);
+
+  //* with custom hook
+  // const {currentUser} = useAuthContext
+
   // const currentUser = { displayName: "kerime abanoz" };
   // const currentUser = false;
   return (
@@ -30,11 +34,12 @@ const Navbar = () => {
                 aria-expanded="false"
               >
                 <img
-                  src={currentUser?.photoUrl || avatar}
+                  src={currentUser?.photoURL || avatar}
                   className="rounded-full"
-                  style={{ height: "25px", width: "25px" }}
-                  alt=""
+                  style={{ height: 25, width: 25 }}
+                  alt="user"
                   loading="lazy"
+                  referrerPolicy="no-referrer"
                 />
               </span>
               <ul
